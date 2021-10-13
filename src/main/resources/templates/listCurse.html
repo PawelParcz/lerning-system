@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Kursów</title>
+</head>
+<body>
+<table>
+    <tr><th>Nazwa Kursu</th></tr>
+
+
+    <tr th:each="curs: ${curse}">
+
+
+        <td th:text="${curs.getNameCurse()}"> </td>
+
+
+
+    </tr>
+    <a th:href="@{/course/add}">Dodaj nowy Kurs</a>
+</table>
+</body>
+</html>
