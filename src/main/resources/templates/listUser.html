@@ -6,23 +6,25 @@
 </head>
 <body>
 <table>
-    <tr><th>firstName</th>
+    <tr>
+        <th>firstName</th>
         <th>lastName</th>
+        <th>login</th>
+        <th>password</th>
+    </tr>
+
+    <tr th:each="use: ${users}">
+
+
+        <td th:text="${use.getFirstName()}"></td>
+        <td th:text="${use.getLastName()}"></td>
+        <td th:text="${use.getLogin()}"></td>
+        <td th:text="${use.getPassword()}"></td>
+
 
     </tr>
-    <tr th:each="use: ${user}">
 
-
-        <td th:text="${use.getFirstName()}"> </td>
-        <td th:text="${use.getLastName()}">  </td>
-        <td th:text="${use.getLogin()}"> </td>
-        <td th:text="${use.getPassword()}">  </td>
-
-        <br></td>
-
-    </tr>
-    <a th:href="@{/users/add}">Dodaj user</a>
 </table>
-
+<a th:href="@{/users/add}">Dodaj user</a>
 </body>
 </html>
