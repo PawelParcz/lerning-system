@@ -10,7 +10,6 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
     private String nameCourse;
 
     //private Block blockSubject;
@@ -20,5 +19,9 @@ public class Course {
 
     public String getNameCurse() {
         return nameCourse;
+    }
+
+    public void setNameCourse(String nameCourse) {
+        this.nameCourse = nameCourse;
     }
 }
