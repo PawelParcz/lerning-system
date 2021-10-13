@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import pl.sda.lerningsystem.entity.Course;
 
 @Repository
-public interface CurseRepository extends JpaRepository<Course, Long> {
+public interface CourseRepository extends JpaRepository<Course, Long> {
 }

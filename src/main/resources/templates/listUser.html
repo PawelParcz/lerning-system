@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Lista urzytkowników</title>
@@ -10,16 +10,18 @@
         <th>lastName</th>
 
     </tr>
-    <tr th:each=>
+    <tr th:each="use: ${user}">
 
 
-        <td th:text=""> </td>
-        <td th:text="">  </td>
+        <td th:text="${use.getFirstName()}"> </td>
+        <td th:text="${use.getLastName()}">  </td>
+        <td th:text="${use.getLogin()}"> </td>
+        <td th:text="${use.getPassword()}">  </td>
 
         <br></td>
 
     </tr>
-
+    <a th:href="@{/users/add}">Dodaj user</a>
 </table>
 
 </body>

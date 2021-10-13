@@ -4,31 +4,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.sda.lerningsystem.entity.Course;
-import pl.sda.lerningsystem.repository.CurseRepository;
+import pl.sda.lerningsystem.repository.CourseRepository;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/curse")
+@RequestMapping("/course")
 public class CurseController {
-    private  final CurseRepository curseRepository;
-    public CurseController(CurseRepository curseRepository) {
-        this.curseRepository = curseRepository;
+    private  final CourseRepository courseRepository;
+    public CurseController(CourseRepository curseRepository) {
+        this.courseRepository = curseRepository;
     }
-    @GetMapping("/listCurse")
-    public String getViewCurse(Model model) {
-        List<Course> courseList =curseRepository.findAll();
-        model.addAttribute("curse", courseList);
-        return "listCurse";
+    @GetMapping("/list")
+    public String getViewCourse(Model model) {
+        List<Course> courseList =courseRepository.findAll();
+        model.addAttribute("course", courseList);
+        return "courseList";
     }
     @GetMapping("/add")
     public String getAddCourse(){
-        return "form2";
-    }
-    @PostMapping("/add")
-    public String postCourse(@ModelAttribute("course") Course course){
-        curseRepository.save(course);
-        return "result2";
+        return "courseForm";
     }
 
+    @PostMapping(value = "/add")
+    public String postCourse(@ModelAttribute("course") Course course){
+        courseRepository.save(course);
+        return "courseResult";
+    }
 }
