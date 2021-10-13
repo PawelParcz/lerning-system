@@ -1,4 +1,4 @@
-package pl.sda.lerningsystem.domain;
+package pl.sda.lerningsystem.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

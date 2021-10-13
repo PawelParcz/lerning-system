@@ -1,4 +1,4 @@
-package pl.sda.lerningsystem.domain;
+package pl.sda.lerningsystem.entity;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

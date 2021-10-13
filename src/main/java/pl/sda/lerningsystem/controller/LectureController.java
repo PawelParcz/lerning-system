@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.sda.lerningsystem.domain.Lecture;
+import pl.sda.lerningsystem.entity.Lecture;
 import pl.sda.lerningsystem.repository.LectureRepository;
 
 @Controller
