@@ -9,7 +9,7 @@ import pl.sda.lerningsystem.domain.User;
 import pl.sda.lerningsystem.repository.UserRepository;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
     UserRepository repository;
@@ -20,13 +20,13 @@ public class UserController {
 
     @GetMapping("/add")
     public String getForm(@ModelAttribute User user){
-        return "form";
+        return "userForm";
     }
 
     @PostMapping("/add")
     public String processForm(@ModelAttribute User user){
         repository.save(user);
-        return "result";
+        return "userResult";
     }
 
 }
