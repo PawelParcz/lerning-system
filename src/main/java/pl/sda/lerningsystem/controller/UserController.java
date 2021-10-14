@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sda.lerningsystem.entity.User;
 import pl.sda.lerningsystem.repository.UserRepository;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/users")
 public class UserController {
