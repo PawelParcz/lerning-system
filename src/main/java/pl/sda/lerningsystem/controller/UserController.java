@@ -22,7 +22,7 @@ public class UserController {
     @GetMapping("/list")
     public String getViewUsers(Model model) {
         List<User> list = repository.findAll();
-        model.addAttribute("user", list);
+        model.addAttribute("users", list);
         return "listUser";
     }
 

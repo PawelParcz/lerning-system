@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bloki tematyczne</title>
+</head>
+<body>
+<h1>Bloki tematyczne:</h1>
+<table>
+    <tr><th>Nazwa bloku</th>
+    <th>Nazwa zajęć</th></tr>
+
+
+    <tr th:each="bl: ${block}">
+
+
+        <td th:text="${bl.getName()}"> </td>
+        <td th:text="${bl.getLecture()}"> </td>
+
+
+
+    </tr>
+    <a th:href="@{/block/add}">Dodaj nowy Kurs</a>
+</table>
+</body>
+</html>

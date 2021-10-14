@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodanie bloku</title>
+</head>
+<body>
+<h1>Dodanie bloku:</h1>
+
+<form method="post">
+    <div >
+        <label for="name" >Blok</label>
+        <input type="text"  name="name" id="name"/>
+    </div>
+    <div >
+        <label for="lecture" >Zajęcia</label>
+        <input type="text"  name="lecture" id="lecture"/>
+    </div>
+
+    <input type="submit" th:value="Dodaj">
+</form>
+</body>
+</html>

@@ -12,7 +12,7 @@ public class Course {
     private Long id;
     private String nameCourse;
 
-    //private Block blockSubject;
+    //private String blockSubject;
 
 
 
