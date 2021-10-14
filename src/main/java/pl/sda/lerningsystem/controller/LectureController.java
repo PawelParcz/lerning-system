@@ -31,7 +31,7 @@ class LectureController {
     public String getForm(@PathVariable("id") Long id, Model model) {
         var lecture = repository.findById(id).orElseThrow(() -> new RuntimeException("There is NOTHING!"));
         model.addAttribute("lecture", lecture);
-        return "lectureEditForm";
+        return "lecture/lectureEditForm";
     }
 
     @PostMapping("/{id}/edit")
@@ -40,6 +40,6 @@ class LectureController {
         lecture.setName(editedValuesLecture.getName());
         lecture.setDate(editedValuesLecture.getDate());
         repository.save(lecture);
-        return "lectureEditResult";
+        return "lecture/lectureEditResult";
     }
 }

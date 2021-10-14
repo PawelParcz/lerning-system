@@ -24,17 +24,17 @@ public class UserController {
     public String getViewUsers(Model model) {
         List<User> list = repository.findAll();
         model.addAttribute("users", list);
-        return "listUser";
+        return "user/listUser";
     }
 
     @GetMapping("/add")
     public String getForm() {
-        return "userForm";
+        return "user/userForm";
     }
 
     @PostMapping(value = "/add")
     public String processForm(@ModelAttribute User users) {
         repository.save(users);
-        return "userResult";
+        return "user/userResult";
     }
 }
