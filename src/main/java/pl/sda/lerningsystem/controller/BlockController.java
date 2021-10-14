@@ -2,11 +2,9 @@ package pl.sda.lerningsystem.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.sda.lerningsystem.entity.Block;
+import pl.sda.lerningsystem.entity.Lecture;
 import pl.sda.lerningsystem.repository.BlockRepository;
 
 import java.util.List;
@@ -25,6 +23,7 @@ public class BlockController {
         model.addAttribute("block",blocks);
         return "block/blockList";
     }
+
     @GetMapping("/add")
     public String getViewAdd(){
         return "block/blockForm";
@@ -33,6 +32,18 @@ public class BlockController {
     public String postBlock(@ModelAttribute("block") Block block){
         blockRepository.save(block);
         return "block/blockResult";
+    }
 
+    @GetMapping("/{id}/delete")
+    public String getForm(@PathVariable("id") Long id, Model model) {
+        var block = blockRepository.findById(id).orElseThrow(() -> new RuntimeException("There is NOTHING!"));
+        model.addAttribute("block", block);
+        return "block/blockDeleteForm";
+    }
+
+    @PostMapping("/{id}/delete")
+    public String proceedForm(@PathVariable("id") Long id, @ModelAttribute Block deletedBlock) {
+        blockRepository.deleteById(id);
+        return "block/blockDeleteResult";
     }
 }

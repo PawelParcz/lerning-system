@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuwanie bloku</title>
+</head>
+<body>
+<h1>Usuwanie bloku:</h1>
+
+<form method="post">
+    <div >
+        <label for="name" >Blok</label>
+        <input type="text"  name="name" id="name" th:value="${block.getName()}"/>
+    </div>
+    <div >
+        <label for="lecture" >Zajęcia</label>
+        <input type="text"  name="lecture" id="lecture" th:value="${block.getLecture()}"/>
+    </div>
+
+    <input type="submit" th:value="Usuń">
+</form>
+</body>
+</html>
