@@ -12,9 +12,13 @@
         <label for="nameCourse" > Kurs</label>
         <input type="text"  name="nameCourse" id="nameCourse"/>
     </div>
+    <div >
+        <label for="nameBlock" > Blok</label>
+        <input type="text"  name="nameBlock" id="nameBlock"/>
+    </div>
 
     <input type="submit" th:value="Dodaj">
 </form>
-
+<a th:href="@{/course/list}">Przejdź do listy</a>
 </body>
 </html>

@@ -11,17 +11,22 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nameCourse;
-
-    //private String blockSubject;
-
+    private String nameBlock;
 
 
-
-    public String getNameCurse() {
+    public String getNameCourse() {
         return nameCourse;
+    }
+
+    public String getNameBlock() {
+        return nameBlock;
     }
 
     public void setNameCourse(String nameCourse) {
         this.nameCourse = nameCourse;
+    }
+
+    public void setNameBlock(String nameBlock) {
+        this.nameBlock = nameBlock;
     }
 }

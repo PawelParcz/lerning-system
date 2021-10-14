@@ -32,7 +32,6 @@ public class BlockController {
     @PostMapping(value = "/add")
     public String postBlock(@ModelAttribute("block") Block block){
         blockRepository.save(block);
-
         return "blockResult";
 
     }

@@ -6,13 +6,17 @@
 </head>
 <body>
 <table>
-    <tr><th>Nazwa Kursu</th></tr>
+    <tr>
+        <th>Nazwa Kursu</th>
+        <th>Nazwa Bloku</th>
+    </tr>
 
 
     <tr th:each="curs: ${course}">
 
 
-        <td th:text="${curs.getNameCurse()}"> </td>
+        <td th:text="${curs.getNameCourse()}"> </td>
+        <td th:text="${curs.getNameBlock()}"> </td>
 
 
 

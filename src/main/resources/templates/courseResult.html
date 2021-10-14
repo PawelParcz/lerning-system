@@ -8,6 +8,15 @@
 <h1>
     Dodano kurs
 </h1>
-Tytuł: <strong th:text="${course.nameCurse}"></strong>,
+
+Tytuł: <strong th:text="${course.nameCourse}"></strong>,
+
+Blok:  <strong th:text="${course.nameBlock}"></strong>,
+
+
+<br>
+<br>
+
+<a th:href="@{/course/list}">Przejdź do listy</a>
 </body>
 </html>
