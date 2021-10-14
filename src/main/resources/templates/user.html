@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dane użytkownika</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>login</th>
+        <th>password</th>
+    </tr>
+    <tr>
+        <td th:text="${user.getFirstName()}"></td>
+        <td th:text="${user.getLastName()}"></td>
+        <td th:text="${user.getLogin()}"></td>
+        <td th:text="${user.getPassword()}"></td>
+    </tr>
+</table>
+</body>
+</html>
