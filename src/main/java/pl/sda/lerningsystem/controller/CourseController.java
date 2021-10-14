@@ -10,10 +10,10 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/course")
-public class CurseController {
+public class CourseController {
     private final CourseRepository courseRepository;
 
-    public CurseController(CourseRepository curseRepository) {
+    public CourseController(CourseRepository curseRepository) {
         this.courseRepository = curseRepository;
     }
 
