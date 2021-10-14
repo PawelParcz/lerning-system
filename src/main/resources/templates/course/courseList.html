@@ -10,13 +10,14 @@
         <th>Nazwa Kursu</th>
         <th>Nazwa Bloku</th>
     </tr>
-
-
     <tr th:each="curs: ${course}">
-        <td th:text="${curs.getNameCourse()}"></td>
+        <td th:text="${curs.getName()}"></td>
         <td th:text="${curs.getNameBlock()}"></td>
     </tr>
-    <a th:href="@{/course/add}">Dodaj nowy Kurs</a>
+
 </table>
+<hr>
+<br>
+<a th:href="@{/course/add}">Dodaj nowy Kurs</a>
 </body>
 </html>

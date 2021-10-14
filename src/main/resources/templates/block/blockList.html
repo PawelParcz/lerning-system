@@ -7,21 +7,19 @@
 </head>
 <body>
 <h1>Bloki tematyczne:</h1>
-<table>
-    <tr><th>Nazwa bloku</th>
-    <th>Nazwa zajęć</th></tr>
 
+<table>
+    <tr>
+        <th>Nazwa bloku</th>
+        <th>Nazwa zajęć</th>
+    </tr>
 
     <tr th:each="bl: ${block}">
-
-
         <td th:text="${bl.getName()}"> </td>
         <td th:text="${bl.getLecture()}"> </td>
-
-
-
     </tr>
-    <a th:href="@{/block/add}">Dodaj nowy Kurs</a>
 </table>
+<hr>
+<a th:href="@{/block/add}">Dodaj nowy Kurs</a>
 </body>
 </html>

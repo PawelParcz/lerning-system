@@ -23,16 +23,16 @@ public class BlockController {
     public String getListBlock(Model model){
         List<Block> blocks=blockRepository.findAll();
         model.addAttribute("block",blocks);
-        return "blockList";
+        return "block/blockList";
     }
     @GetMapping("/add")
     public String getViewAdd(){
-        return "blockForm";
+        return "block/blockForm";
     }
     @PostMapping(value = "/add")
     public String postBlock(@ModelAttribute("block") Block block){
         blockRepository.save(block);
-        return "blockResult";
+        return "block/blockResult";
 
     }
 }

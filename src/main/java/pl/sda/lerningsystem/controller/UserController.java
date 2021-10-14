@@ -2,9 +2,14 @@ package pl.sda.lerningsystem.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sda.lerningsystem.entity.User;
 import pl.sda.lerningsystem.repository.UserRepository;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/users")
@@ -15,11 +20,11 @@ public class UserController {
         this.repository = repository;
     }
 
-    @GetMapping("/{id}")
-    public String getViewUsers(@PathVariable("id") Long id, Model model) {
-        User user = repository.getById(id);
-        model.addAttribute("user", user);
-        return "user";
+    @GetMapping("/list")
+    public String getViewUsers(Model model) {
+        List<User> list = repository.findAll();
+        model.addAttribute("users", list);
+        return "listUser";
     }
 
     @GetMapping("/add")

@@ -21,17 +21,17 @@ public class CourseController {
     public String getViewCourse(Model model) {
         List<Course> courseList = courseRepository.findAll();
         model.addAttribute("course", courseList);
-        return "courseList";
+        return "course/courseList";
     }
 
     @GetMapping("/add")
     public String getAddCourse() {
-        return "courseForm";
+        return "course/courseForm";
     }
 
     @PostMapping(value = "/add")
     public String postCourse(@ModelAttribute("course") Course course) {
         courseRepository.save(course);
-        return "courseResult";
+        return "course/courseResult";
     }
 }

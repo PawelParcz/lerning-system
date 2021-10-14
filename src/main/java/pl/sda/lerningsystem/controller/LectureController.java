@@ -17,14 +17,14 @@ class LectureController {
     }
 
     @GetMapping("/add")
-    public String getForm(@ModelAttribute Lecture lecture) {
-        return "lectureForm";
+    public String getForm(@ModelAttribute("lecture") Lecture lecture) {
+        return "lecture/lectureForm";
     }
 
     @PostMapping("/add")
-    public String processForm(@ModelAttribute Lecture lecture) {
+    public String processForm(@ModelAttribute("lecture") Lecture lecture) {
         repository.save(lecture);
-        return "lectureResult";
+        return "lecture/lectureResult";
     }
 
     @GetMapping("/{id}/edit")
